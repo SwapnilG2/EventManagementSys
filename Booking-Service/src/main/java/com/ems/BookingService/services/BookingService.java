@@ -1,0 +1,82 @@
+package com.ems.BookingService.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ems.BookingService.clients.EventClient;
+import com.ems.BookingService.clients.UserClient;
+import com.ems.BookingService.dto.BookingResponse;
+import com.ems.BookingService.dto.Event;
+import com.ems.BookingService.dto.User;
+import com.ems.BookingService.entities.Booking;
+import com.ems.BookingService.repositories.BookingRepository;
+
+@Service
+public class BookingService {
+
+	@Autowired
+	private BookingRepository bookingRepository;
+
+	@Autowired
+    private UserClient userClient;
+
+    @Autowired
+    private EventClient eventClient;
+
+    public BookingResponse bookEvent(Long userId, Long eventId, Booking.Status status) {
+        // Call Feign Clients
+        User user = userClient.getUserById(userId);
+        Event event = eventClient.getEventById(eventId);
+
+        // Create booking entity
+        Booking booking = Booking.builder()
+                .userId(userId)
+                .eventId(eventId)
+                .status(status)
+                .build();
+
+        Booking saved = bookingRepository.save(booking);
+
+        // Return DTO
+        BookingResponse response = new BookingResponse();
+        response.setBookingId(saved.getId());
+        response.setUser(user);
+        response.setEvent(event);
+        response.setStatus(saved.getStatus().name());
+
+        return response;
+    }
+	
+	public Booking createBooking(Booking booking) {
+		booking.setBookingDate(new java.util.Date());
+		booking.setStatus(Booking.Status.CONFIRMED);
+		return bookingRepository.save(booking);
+	}
+
+	public List<Booking> getAllBookings() {
+		return bookingRepository.findAll();
+	}
+
+	public Optional<Booking> getBookingById(Long id) {
+		return bookingRepository.findById(id);
+	}
+
+	public List<Booking> getBookingsByUserId(Long userId) {
+		return bookingRepository.findByUserId(userId);
+	}
+
+	public List<Booking> getBookingsByEventId(Long eventId) {
+		return bookingRepository.findByEventId(eventId);
+	}
+
+	public void cancelBooking(Long id) {
+		Optional<Booking> booking = bookingRepository.findById(id);
+		booking.ifPresent(b -> {
+			b.setStatus(Booking.Status.CANCELLED);
+			bookingRepository.save(b);
+		});
+	}
+}

@@ -1,0 +1,5 @@
+package com.ems.BookingService.services;
+
+public class BookingService {
+
+}

@@ -1,0 +1,5 @@
+package com.ems.NotificationService.controllers;
+
+public class NotificationController {
+
+}

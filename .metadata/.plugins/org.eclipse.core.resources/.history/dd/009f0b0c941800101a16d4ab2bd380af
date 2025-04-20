@@ -1,0 +1,5 @@
+package com.ems.BookingService.controllers;
+
+public class BookingController {
+
+}

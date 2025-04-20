@@ -1,0 +1,5 @@
+package com.ems.UserService.controllers;
+
+public class UserController {
+
+}

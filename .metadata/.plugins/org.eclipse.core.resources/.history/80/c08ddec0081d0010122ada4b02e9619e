@@ -1,0 +1,38 @@
+package com.ems.NotificationService.services;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ems.NotificationService.entities.Notification;
+import com.ems.NotificationService.repositories.NotificationRepository;
+
+@Service
+public class NotificationService {
+	@Autowired
+    private NotificationRepository notificationRepository;
+
+    public Notification sendNotification(Long userId, String message) {
+        Notification notification = Notification.builder()
+                .userId(userId)
+                .message(message)
+                .sentAt(new Date())
+//                .status(Notification.status.SENT)
+                .build();
+
+        // Simulate sending logic (e.g., console log or future email sender)
+        System.out.println("Sending notification to User ID " + userId + ": " + message);
+
+        return notificationRepository.save(notification);
+    }
+
+    public List<Notification> getNotificationsForUser(Long userId) {
+        return notificationRepository.findByUserId(userId);
+    }
+
+    public List<Notification> getAllNotifications() {
+        return notificationRepository.findAll();
+    }
+}

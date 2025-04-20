@@ -1,0 +1,5 @@
+package com.ems.UserService.entities;
+
+public class User {
+
+}

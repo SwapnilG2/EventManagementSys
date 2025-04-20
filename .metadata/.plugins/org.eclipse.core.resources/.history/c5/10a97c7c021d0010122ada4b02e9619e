@@ -1,0 +1,5 @@
+package com.ems.BookingService.dto;
+
+public class BookingResponse {
+
+}

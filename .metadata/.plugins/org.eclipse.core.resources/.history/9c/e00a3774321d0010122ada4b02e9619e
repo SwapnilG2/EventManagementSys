@@ -1,0 +1,5 @@
+package com.ems.AuthService.util;
+
+public class JwtUtil {
+
+}

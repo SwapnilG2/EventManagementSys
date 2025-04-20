@@ -1,0 +1,5 @@
+package com.ems.NotificationService.services;
+
+public class NotificationService {
+
+}

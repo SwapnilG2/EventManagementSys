@@ -1,0 +1,5 @@
+package com.ems.BookingService.repositories;
+
+public interface BookingRepository {
+
+}

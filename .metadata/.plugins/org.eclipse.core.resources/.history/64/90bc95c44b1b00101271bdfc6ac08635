@@ -1,0 +1,5 @@
+package com.ems.EventService.service;
+
+public class EventService {
+
+}

@@ -1,0 +1,42 @@
+package com.ems.NotificationService.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ems.NotificationService.entities.Notification;
+import com.ems.NotificationService.services.NotificationService;
+
+@RestController
+@RequestMapping("/notifications")
+public class NotificationController {
+	@Autowired
+    private NotificationService notificationService;
+
+    @PostMapping("/send")
+    public ResponseEntity<Notification> sendNotification(@RequestParam Long userId, @RequestParam String message) {
+        return ResponseEntity.ok(notificationService.sendNotification(userId, message));
+    }
+
+    @PostMapping("/sms")
+    public String sendSms(@RequestParam String to, @RequestParam String message) {
+        return notificationService.sendSms(to, message);
+    }
+    
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Notification>> getUserNotifications(@PathVariable Long userId) {
+        return ResponseEntity.ok(notificationService.getNotificationsForUser(userId));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Notification>> getAllNotifications() {
+        return ResponseEntity.ok(notificationService.getAllNotifications());
+    }
+}

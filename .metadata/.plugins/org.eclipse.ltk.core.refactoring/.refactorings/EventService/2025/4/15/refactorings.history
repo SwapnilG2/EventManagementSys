@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.ems.Events.entity&apos; to &apos;com.ems.Events.entities&apos;&#x0D;&#x0A;- Original project: &apos;EventService&apos;&#x0D;&#x0A;- Original element: &apos;EventService/src/main/java/com.ems.Events.entity&apos;&#x0D;&#x0A;- Renamed element: &apos;EventService/src/main/java/com.ems.Events.entities&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.ems.Events.entity&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ems.Events.entity" name="com.ems.Events.entities" qualified="false" references="true" stamp="1744175464622" textual="false" version="1.0"/>
+</session>

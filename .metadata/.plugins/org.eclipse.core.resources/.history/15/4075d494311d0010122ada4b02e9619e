@@ -1,0 +1,5 @@
+package com.ems.AuthService.entities;
+
+public class User {
+
+}

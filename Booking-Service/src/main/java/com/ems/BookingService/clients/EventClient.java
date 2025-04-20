@@ -1,0 +1,15 @@
+package com.ems.BookingService.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.ems.BookingService.dto.Event;
+
+@FeignClient(name = "event-service")
+public interface EventClient {
+	@GetMapping("/events/{id}")
+	Event getEventById(@PathVariable("id") Long id);
+}
+//

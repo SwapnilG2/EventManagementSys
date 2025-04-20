@@ -1,0 +1,5 @@
+package com.ems.UserService.repositories;
+
+public interface UserRepository {
+
+}

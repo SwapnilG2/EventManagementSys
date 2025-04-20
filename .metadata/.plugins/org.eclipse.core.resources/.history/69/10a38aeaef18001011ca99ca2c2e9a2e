@@ -1,0 +1,8 @@
+package com.ems.BookingService.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="event-service")
+public interface EventClient {
+
+}
