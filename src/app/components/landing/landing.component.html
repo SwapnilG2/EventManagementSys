@@ -1,0 +1,27 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Event Management <br> that Delivers Excellence</h1>
+    <p>Manage, track, and streamline your events effortlessly with our all-in-one solution.</p>
+    <div class="actions">
+      <button mat-raised-button color="primary">Get Started</button>
+      <button mat-stroked-button color="accent">Learn More</button>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <!-- Placeholder image or SVG -->
+    <img src="../../../../public/landing-vector.jpg" >
+  </div>
+</div>
+<div class="features-section">
+  <h2 class="section-title">Why Choose Our Event Management Platform?</h2>
+  <div class="features-grid">
+
+    <mat-card class="feature-card" *ngFor="let feature of features">
+      <mat-icon class="feature-icon" color="primary">{{ feature.icon }}</mat-icon>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </mat-card>
+
+  </div>
+</div>

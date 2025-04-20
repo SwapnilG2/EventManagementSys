@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # EventManagementSys
 =======
+=======
+>>>>>>> b97e8ad9314f9604ae9a28cc882dcc6308a2eb2e
 # EventManagementSystem
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
@@ -60,4 +63,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<<<<<<< HEAD
 >>>>>>> 8463046 (initial commit)
+=======
+>>>>>>> b97e8ad9314f9604ae9a28cc882dcc6308a2eb2e
