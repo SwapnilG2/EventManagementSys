@@ -2,10 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    background: #f4f6fa;
+    height: 100vh;
+    /* background-image: url(../../../../public/landing-vector.jpg);
+    background-size: contain; */
+    background: linear-gradient(to left, #724479, #cd91d8);
   }
-  
+  mat-card h2{
+    align-items: center;
+  }
   mat-card {
     width: 350px;
     padding: 20px;

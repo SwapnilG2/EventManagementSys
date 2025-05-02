@@ -1,0 +1,25 @@
+<mat-sidenav-container class="dashboard-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-toolbar color="primary">Dashboard</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/events">Events</a>
+        <a mat-list-item routerLink="/bookings">Bookings</a>
+        <a mat-list-item routerLink="/users">Users</a>
+        <a mat-list-item routerLink="/notifications">Notifications</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="top-toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()" class="hide-on-desktop">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="title">Welcome to Event Management System</span>
+      </mat-toolbar>
+  
+      <div class="dashboard-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

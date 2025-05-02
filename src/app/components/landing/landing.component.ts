@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import { MatIconModule} from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-landing',
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, MatToolbar, RouterModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
   standalone : true

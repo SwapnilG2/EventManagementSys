@@ -1,0 +1,32 @@
+.dashboard-container {
+    height: 100vh;
+  }
+  
+  .sidenav {
+    width: 220px;
+  }
+  
+  .top-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  
+  .dashboard-content {
+    padding: 24px;
+  }
+  
+  .hide-on-desktop {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .sidenav {
+      width: 100%;
+    }
+  
+    .hide-on-desktop {
+      display: inline-flex;
+    }
+  }
+  

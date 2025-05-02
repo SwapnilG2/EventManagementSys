@@ -1,20 +1,25 @@
 <div class="auth-container">
     <mat-card>
       <h2>Register</h2>
-      <form>
-        <mat-form-field appearance="fill" class="full-width">
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <mat-form-field appearance="outline" class="full-width">
           <mat-label>Name</mat-label>
-          <input matInput required />
+          <input matInput [(ngModel)]="username" required />
         </mat-form-field>
   
-        <mat-form-field appearance="fill" class="full-width">
+        <mat-form-field appearance="outline" class="full-width">
           <mat-label>Email</mat-label>
-          <input matInput type="email" required />
+          <input matInput [(ngModel)]="email" type="email" required />
         </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Phone No</mat-label>
+          <input matInput type="tel" required />
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput type="password" required />
+          <input matInput [(ngModel)]="password" type="password" required />
         </mat-form-field>
   
         <button mat-raised-button color="primary" class="full-width">Register</button>
