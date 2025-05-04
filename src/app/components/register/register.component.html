@@ -3,26 +3,34 @@
       <h2>Register</h2>
       <form (ngSubmit)="register()" #registerForm="ngForm">
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Name</mat-label>
-          <input matInput [(ngModel)]="username" required />
+          <mat-label>FullName</mat-label>
+          <input matInput [(ngModel)]="fullname" name="fullname" type="text" required />
         </mat-form-field>
   
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="email" type="email" required />
+          <input matInput [(ngModel)]="email" name="email" type="email" required />
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Phone No</mat-label>
-          <input matInput type="tel" required />
+          <input matInput type="tel" range="10" [(ngModel)]="phone" name="phone" required />
         </mat-form-field>
         
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput [(ngModel)]="password" type="password" required />
+          <input matInput [(ngModel)]="password" name="password" type="password" required />
         </mat-form-field>
-  
-        <button mat-raised-button color="primary" class="full-width">Register</button>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Role</mat-label>
+          <select matNativeControl [(ngModel)]="role" name="role" required>
+            <option value="ATTENDEE">ATTENDEE</option>
+            <option value="ORGANIZER">ORGANIZER</option>
+          </select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width" type="submit" [hidden]="false">Register</button>
       </form>
       <p class="bottom-text">
         Already have an account?

@@ -23,21 +23,29 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
 })
 export class RegisterComponent {
-  username = '';
+  
+  fullname = '';
   email = '';
+  phone = '';
   password = '';
+  role = 'ATTENDEE';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   register() {
     const user = {
-      name: this.username,
+      fulName: this.fullname,
       email: this.email,
-      password: this.password
+      phone: this.phone,
+      password: this.password,
+      role: this.role,
     };
 
     this.authService.register(user).subscribe({
-      next: () => this.router.navigate(['/login']),
+      next: res => {
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/dashboard']);
+      },
       error: (err: any) => console.error('Registration failed', err)
     });
   }

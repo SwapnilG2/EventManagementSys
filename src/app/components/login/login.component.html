@@ -4,15 +4,15 @@
       <form (ngSubmit)="login()" #loginForm="ngForm">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="email" type="email" required />
+          <input matInput [(ngModel)]="email" type="email" name="email" required/>
         </mat-form-field>
   
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput [(ngModel)]="password" type="password" required />
+          <input matInput [(ngModel)]="password" type="password" name="password" required />
         </mat-form-field>
   
-        <button mat-raised-button color="primary" class="full-width">Login</button>
+        <button mat-raised-button color="primary" class="full-width" type="submit">Login</button>
       </form>
       <p class="bottom-text">
         Don't have an account?

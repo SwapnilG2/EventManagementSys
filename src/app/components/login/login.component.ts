@@ -20,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
     RouterModule,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrls: ['./login.component.css'],
   standalone: true,
 })
 export class LoginComponent {
